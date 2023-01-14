@@ -1,5 +1,5 @@
 # Credit Approval Prediction
-Credit Approval analysis using python  
+Credit Approval predition using python  
 Dataset: https://archive.ics.uci.edu/ml/datasets/Credit+Approval  
 Model: Decision tree
 
