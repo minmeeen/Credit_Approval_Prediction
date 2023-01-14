@@ -16,7 +16,8 @@ Depth  | Train score  |  Test score  |
 6 | 0.9503105590062112 | 0.8357487922705314 |
 7 | 0.968944099378882 | 0.8454106280193237 |
 8 | 0.9875776397515528 | 0.821256038647343 |
-9 | 0.9958592132505176 | 0.8309178743961353 
+9 | 0.9958592132505176 | 0.8309178743961353 |
+
 ![Image](https://github.com/minmeeen/Credit-Approval-analysis/blob/main/image/accuracy_plt.png)
 
 ### Tree:  
