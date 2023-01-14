@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
 from sklearn.model_selection import train_test_split # Import train_test_split function
 from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
+from sklearn.metrics import accuracy_score
 
 
 # load dataset
@@ -76,21 +77,48 @@ y = dataset['A16']
 dtree = DecisionTreeClassifier()
 dtree = dtree.fit(X, y)
 
-tree.plot_tree(dtree, feature_names=features)
+# tree.plot_tree(dtree, feature_names=features)
 
 
-# Split dataset into training set and test set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1) # 80% training and 30% test
-# Create Decision Tree classifer object
-clf = DecisionTreeClassifier()
+# # Split dataset into training set and test set
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1) # 70% training and 30% test
+# # Create Decision Tree classifer object
+# clf = DecisionTreeClassifier()
 
-# Train Decision Tree Classifer
-clf = clf.fit(X_train,y_train)
+# # Train Decision Tree Classifer
+# clf = clf.fit(X_train,y_train)
 
-#Predict the response for test dataset
-y_pred = clf.predict(X_test)
-# Model Accuracy, how often is the classifier correct?
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+# #Predict the response for test dataset
+# y_pred = clf.predict(X_test)
+# # Model Accuracy, how often is the classifier correct?
+# print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
+train_ac=[]
+test_ac=[]
+score=[]
+p=[]
 
+for i in range(1, 10):
+    
+    dtc = DecisionTreeClassifier(max_depth = i ,random_state = 0)
+    dtc.fit(X_train, y_train)
+
+    train_pred = dtc.predict(X_train)
+    #train_acc.append(score(train_pred, yTrain))
+    
+    test_pred = dtc.predict(X_test)
+    #test_acc.append(score(test_pred, yTest))
+    test_acc = accuracy_score(y_test, test_pred)
+    train_acc = accuracy_score(y_train, train_pred)
+    print(i,'Train score:',train_acc,'Test score:',test_acc)
+
+    score.append([i,accuracy_score(train_pred, y_train),accuracy_score(test_pred, y_test)]) 
+    
+    
+df2 = pd.DataFrame (score,columns=['Depth','Train Accuracy','Test Accuracy'])
+plt.plot(df2['Depth'],df2['Test Accuracy'],label='Test Accuracy')
+plt.plot(df2['Depth'],df2['Train Accuracy'],label='Train Accuracy')
+plt.xlabel('Depth')
+plt.ylabel('Accuracy')
+plt.legend() 
 plt.show()
