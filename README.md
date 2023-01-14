@@ -4,8 +4,9 @@ Dataset: https://archive.ics.uci.edu/ml/datasets/Credit+Approval
 Model: Decision tree
 
 
-##Using Library  
-###Accuracy  
+## Using Library  
+### Accuracy  
+----- | ----- | 
 1 Train score: 0.8530020703933747 | Test score: 0.8599033816425121 |
 2 Train score: 0.8530020703933747 | Test score: 0.8599033816425121 |
 3 Train score: 0.8757763975155279 | Test score: 0.8599033816425121 |
@@ -17,7 +18,7 @@ Model: Decision tree
 9 Train score: 0.9958592132505176 | Test score: 0.8309178743961353 |
 ![Image](https://github.com/minmeeen/Credit-Approval-analysis/blob/main/image/accuracy_plt.png)
 
-###Tree:  
+### Tree:  
 ![Image](https://github.com/minmeeen/Credit-Approval-analysis/blob/main/image/tree_by_scikit.png)
 
 
