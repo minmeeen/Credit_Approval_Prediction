@@ -4,7 +4,7 @@ Dataset: https://archive.ics.uci.edu/ml/datasets/Credit+Approval
 Model: Decision tree
 
 
-## Using Library  
+## Using Scikit-learn
 ### Accuracy  
 Depth  | Train score  |  Test score  |
 ----- | ----- | ----- |
